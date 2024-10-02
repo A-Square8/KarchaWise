@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KharchaWise</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="auth-container" id="authContainer">
+        <div class="form-container">
+            <div class="login-container" id="loginContainer">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" value="root"  required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" value="123456" required>
+                    </div>
+
+                    <div class="auth-btn">
+                        <div id="errormessage" style="color: maroon; margin: 2px;"></div>
+                        <button type="submit" class="authform-btn">Login</button>
+                        <p>Don't have an account? <a href="#" id="showRegisterForm">Register</a></p>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="register-container" id="registerContainer" style="display: none;">
+                <h2>Register</h2>
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="newUsername">Username</label>
+                        <input type="text" id="newUsername" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="newPassword">Password</label>
+                        <input type="password" id="newPassword" required>
+                    </div>
+
+                    <div class="auth-btn">
+                        <div id="registererrormessage"></div>
+                        <button type="submit" class="authform-btn">Register</button>
+                        <p>Already have an account? <a href="#" id="showLoginForm">Login</a></p>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="mainContent"  >
+        <header>
+            <nav>
+              <div class="logo">KharchaWise</div>
+            </nav>
+          </header>
+      
+          <main>
+            <section id="section1">
+              <div class="content">
+                <div class="input-group-add" style="width: 80%;">
+                  <button class="func-btn-tr" id="expenseBtn" data-value="Expense"
+                    onclick="selectOption('Expense')">EXPENSE</button>
+                  <button class="func-btn-tr" id="incomeBtn" data-value="Income"
+                    onclick="selectOption('Income')">INCOME</button>
+                  <button class="func-btn-tr" id="transferBtn" data-value="Transfer"
+                    onclick="selectOption('Transfer')">TRANSFER</button>
+                </div>
+      
+                <div class="input-group-add" style="flex-direction: column;">
+                  <label for="account">Account</label>
+                  <select id="account">
+                    <option value="Cash">Cash</option>
+                    <option value="Bank">Bank</option>
+                  </select>
+                </div>
+      
+                <div id="toAccountGroup" class="input-group-add" style="flex-direction: column;">
+                  <label for="toAccount">To Account</label>
+                  <select id="toAccount">
+                    <option value="Cash">Cash</option>
+                    <option value="Bank">Bank</option>
+                  </select>
+                </div>
+      
+                <div id="expenseCategoryGroup" class="input-group-add" style="flex-direction: column;">
+                  <label for="expenseCategory">Expense Category</label>
+                  <select id="expenseCategory">
+                    <option value="Food">Food</option>
+                    <option value="Medical">Medical</option>
+                    <option value="Education">Education</option>
+                    <option value="Travelling">Travelling</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Entertainment">Entertainment</option>
+                  </select>
+                </div>
+      
+                <div class="input-group-add" style="flex-direction: column; height: auto;">
+                  <label for="description">Description</label>
+                  <textarea id="description" rows="3"></textarea>
+                </div>
+      
+                <div class="input-group-add" style="flex-direction: column;">
+                  <label for="dateField">Select a date:</label>
+                  <input type="date" id="dateField" style="width: 100%;font-size: 16px;border: 1px solid maroon;border-radius: 4px;box-sizing: border-box;padding: 0.5rem;">
+                </div>
+      
+                <div class="input-group-add">
+                  <input type="text" id="numberInput" readonly>
+                </div>
+      
+                <div class="calculator">
+                  <button class="calc-btn" data-value="1">1</button>
+                  <button class="calc-btn" data-value="2">2</button>
+                  <button class="calc-btn" data-value="3">3</button>
+                  <button class="calc-btn" data-operation="+">+</button>
+                  <button class="calc-btn" data-value="4">4</button>
+                  <button class="calc-btn" data-value="5">5</button>
+                  <button class="calc-btn" data-value="6">6</button>
+                  <button class="calc-btn" data-operation="-">-</button>
+                  <button class="calc-btn" data-value="7">7</button>
+                  <button class="calc-btn" data-value="8">8</button>
+                  <button class="calc-btn" data-value="9">9</button>
+                  <button class="calc-btn" data-operation="*">*</button>
+                  <button class="calc-btn" data-value="0">0</button>
+                  <button class="calc-btn" id="clear">Clr</button>
+                  <button class="calc-btn" id="equals">=</button>
+                  <button class="calc-btn" data-operation="/">/</button>
+                </div>
+      
+                <button id="submitBtn">Submit</button>
+              </div>
+            </section>
+            <section id="section2">
+      
+              <div class="content">
+                Lorem ipsum dolor sit amet.
+      
+              </div>
+            </section>
+            <section id="section3">
+      
+              <div class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, debitis odit!
+              </div>
+            </section>
+          </main>
+      
+          <!-- Mobile Navigation Buttons -->
+          <div class="mobile-nav">
+            <button data-target="section1">Add</button>
+            <button data-target="section2">View</button>
+            <button data-target="section3">Analyze</button>
+          </div>
+    </div>
+
+
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: maroon;
+
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-container {
+    padding: 3rem;
+    width: auto;
+    height: auto;
+    background-color: rgb(250, 240, 221);
+    border-radius: 20px;
+    margin: 8%;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+}
+
+.input-group input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: transparent;
+    border:1px solid maroon;
+}
+
+.auth-btn
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: maroon;
+    cursor: pointer;
+}
+
+.authform-btn{
+    padding: 12px 20px;
+    background-color: maroon;
+    color: whitesmoke;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(250, 240, 221);
+    color: black;
+    font-weight: 450;
+}
+
+
+#mainContent {
+    display: none;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 100vh;
+    width: 100vw; 
+    background-color: rgb(250, 240, 221);
+    color: maroon;
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: maroon;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+}
+
+section {
+    padding-left: 2.5rem;
+    overflow: scroll;
+}
+
+#section1,
+#section3 {
+    width: 30%;
+    overflow-y: auto;
+}
+
+#section1
+{
+    color: maroon;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+#section2 {
+    width: 40%;
+    overflow-y: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+section h2 {
+    font-size: 1.25rem;
+    color: maroon;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: maroon;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(159, 3, 3);
+}
+
+button:focus {
+    outline: none;
+}
+
+
+section .content::-webkit-scrollbar {
+    width: 0;
+}
+
+section .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 90%;
+}
+
+.mobile-nav button.active {
+    background-color: rgb(159, 3, 3);
+}
+
+@media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    section {
+        display: none; 
+    }
+
+    section.active {
+        display: block; 
+        height: calc(100vh - 140px);
+    }
+
+    #section1,
+    #section3 {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    #section2 {
+        width: 100%;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        background-color: #fff;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    .mobile-nav button {
+        flex: 1;
+    }
+}
+
+
+
+/*  Styling for add section */
+.input-group-add {
+    height: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+    width: 100%;
+}
+input
+{
+    background-color: transparent;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 300px;
+}
+select
+{
+    background-color: transparent;
+    margin-bottom: 8rem;
+}
+select, input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid maroon;
+}
+
+#numberInput {
+    text-align: right;
+}
+
+.calculator {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.calc-btn {
+    padding: 15px;
+    font-size: 18px;
+    background-color: maroon;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calc-btn:hover {
+    background-color: rgb(159, 3, 3);
+}
+
+#submitBtn {
+    width: 40%;
+    padding: 10px;
+    background-color: maroon;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submitBtn:hover {
+    background-color: rgb(159, 3, 3);
+}
+
+
+
+.func-btn-tr.active {
+    background-color: rgb(159, 3, 3);
+    transform: scale(1.1);
+  }
+  
+.func-btn-tr
+{
+    padding: 8px;
+    font-size: 14px;   
+}
+
+  #toAccountGroup, #expenseCategoryGroup {
+    display: none;
+    flex-direction: column;
+  }
+  
+  select, textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid maroon;
+    background-color: transparent;
+  }
