@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Main application logic
+// Login handling
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const registerForm = document.getElementById('registerForm');
@@ -167,7 +167,6 @@ function MainContent(profile) {
             default: return b;
         }
     }
-
     // Handle submission
     document.getElementById('submitBtn').addEventListener('click', () => {
         const transactionType = document.getElementById('transactionType').value;
@@ -189,8 +188,20 @@ function MainContent(profile) {
     });
 
     // Date field setup
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('dateField').value = today;
+    function getCurrentDateInIST() {
+        const now = new Date();
+        
+        // Convert UTC to IST (India Standard Time is UTC+5:30)
+        const utcOffset = now.getTimezoneOffset(); // Difference between UTC and local time in minutes
+        const istOffset = 330; // IST is UTC+5:30, i.e., 330 minutes ahead of UTC
+        
+        // Add the IST offset to the current time
+        now.setMinutes(now.getMinutes() + utcOffset + istOffset);
+        
+        return now.toISOString().split('T')[0];
+    }
+    
+    document.getElementById('dateField').value = getCurrentDateInIST();
 
     // Transaction type logic
     let selectedOption = 'Expense';
@@ -226,4 +237,35 @@ function MainContent(profile) {
 
     // Default view on load
     selectOption('Expense'); // Set default as Expense
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //logout
+    document.getElementById('logout-btn').addEventListener('click', function() {
+        auth.signOut().then(() => {
+            const mainContent = document.getElementById('mainContent');
+            const loginContainer = document.getElementById('loginContainer');
+            const registerContainer = document.getElementById('registerContainer');
+    
+            mainContent.style.display = 'none';
+            registerContainer.style.display = 'none'; 
+            loginContainer.style.display = 'block';
+    
+        }).catch((error) => {
+            console.error('Sign out error', error);
+        });
+    });
 }
